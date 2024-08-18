@@ -160,8 +160,8 @@ main{
 }
 
 .tarjeta{
-    width: 270px;/*Ajusta el ancho del elemento*/
-    height: 580px;/*Ajusta el alto del elemento*/
+    width: 370px;/*Ajusta el ancho del elemento*/
+    height: 480px;/*Ajusta el alto del elemento*/
     background: var(--Font);
     box-shadow: 10px 24px 32px 8px var(--Gray);
     position: relative;
