@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="icon" type="image/x-icon" href="./imagenes/favicon.ico">
+    <title>Encriptador de Texto</title>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <a href="#" rel="">
+            <img class="logo" src="./imagenes/logo.svg" alt="Logo Alura">
+        </a>
+    </header>
+    <!-- Principal -->
+    <main>
+        <section class="encriptador">
+            <textarea class="encriptar" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="encriptador-aviso">
+                <img class="img-aviso" src="./imagenes/aviso.svg" alt="Aviso de admiración">
+                <p class="texto-aviso">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="encriptador-contenedor">
+                <button type="submit" class="btn-encriptar">Encriptar</button>
+                <button type="submit" class="btn-desencriptar">Desencriptar</button>
+            </div>
+        </section>
+        <section class="tarjeta">
+            <div class="tarjeta-contenedor">
+                <img src="./imagenes/muñeco.svg" alt="Imagen Muñeco" class="img-muneco">
+                <p class="texto-uno">Ningún mensaje fue encontrado</p>
+                <p class="texto-dos">Ingrese el texto que deseas encriptar o desencriptar</p>
+            </div>
+            <textarea type="mensaje" class="evaluar" readonly></textarea>
+            <button type="submit" class="btn-copiar">Copiar</button>
+        </section>
+
+    </main>
+    <!-- Pie de Página -->
+    <footer>
+        <p class="copyright">&copy; copyright 2024 - Encriptador de texto. Desarrollado por Duván Ballesteros Gallego</p>
+        <a href="https://www.linkedin.com/in/duvan-ballesteros-80944a323" target="_blank" rel="">
+            <img src="./imagenes/linkedin.svg" alt="Logo LinkedIn" class="linkedin">
+        </a>
+        <a href="https://github.com/Duvan1975" target="_blank" rel="">
+            <img src="./imagenes/github.svg" alt="Logo GitHub" class="github">
+        </a>
+    </footer>
+    <script src="./js/encriptador.js"></script>
+</body>
+
+</html>
