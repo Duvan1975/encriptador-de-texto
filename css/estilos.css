@@ -6,7 +6,6 @@
     --Font:#E5E5E5;
     --white: #FFFFFF;
     --Dark-Blue:#0A3871;
-    --Light-Blue:#D8DFE8;
     --Greey: #C5C5C5;
     --Medium-Gray:#67808E;
     --RGBA:rgba(0,0,0,0.08);
@@ -98,7 +97,6 @@ main{
     background-color: transparent;
     gap: 8px;
     position: absolute;
-
     top: 400px;
 }
 
@@ -112,7 +110,7 @@ main{
 }
 
 .texto-refresh{
-    margin: 12px 92px;
+    margin: 12px 98px;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -163,13 +161,13 @@ main{
     line-height: 19px;
     text-align: center;
     color: var(--Dark-Blue);
-    background: var(--Light-Blue);
+    background: var(--White-Blue);
     border: 1px solid var(--Dark-Blue);
     border-radius: 24px;
     cursor: pointer;
     box-shadow: 0px 20px 29px -5px var(--RGBA);
 }
-
+.btn-limpiar:active,
 .btn-copiar:active,
 .btn-desencriptar:active{
     box-shadow: inset 2px 2px 4px var(--Dark-Blue),
@@ -193,6 +191,15 @@ main{
     margin: 80px;
     margin-top: 50px;
     background: var(--Font);
+}
+
+.encriptador-mensaje{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 440px;
 }
 
 .img-muneco{
@@ -242,12 +249,11 @@ main{
 }
 
 .btn-copiar{
-    width: 214px;
+    width: 150px;
     height: 57px;
-    margin: 27px 95px;
-    position: absolute;
+    margin: 0px 35px;
+    position: inherit;
     bottom: 5px;
-    left: 4px;
     /*visibility: hidden;*/
     padding: 24px;
     font-size: 16px;
@@ -259,6 +265,25 @@ main{
     border-radius: 20px;
     cursor: pointer;
 }
+
+.btn-limpiar{
+    width: 150px;
+    height: 57px;
+    margin: 0 0 0px 220px;
+    position: inherit;
+    bottom: 5px;
+    /*visibility: hidden;*/
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 10px;
+    text-align: center;
+    background: var(--White-Blue);
+    border: 1px solid var(--Dark-Blue);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 
 .btn-encriptar:hover,
 .btn-desencriptar:hover,
@@ -313,6 +338,11 @@ footer{
     .encriptador-aviso{
         position: inherit;
         margin: 15px;
+    }
+    .encriptador-mensaje{
+        display: flex;
+        align-items: center;
+        position: inherit;
     }
     .tarjeta{
         width: 665px;
@@ -372,7 +402,14 @@ footer{
         gap: 21px;
     }
     .tarjeta{
+        margin: auto;
         width: 90%;
+    }
+    .texto-aviso{
+        font-size: 14px;
+    }
+    .texto-refresh{
+        font-size: 14px;
     }
     .copyright{
         font-size: 20px;

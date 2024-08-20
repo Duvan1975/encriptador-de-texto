@@ -6,6 +6,7 @@ const respuesta = document.querySelector(".evaluar");
 const contenido = document.querySelector(".tarjeta-contenedor");
 const btnCopiar = document.querySelector(".btn-copiar");
 const btnDesencriptar = document.querySelector(".btn-desencriptar");
+const btnLimpiar = document.querySelector(".btn-limpiar");
 
 //----- Botón Encriptar -----//
 btnEncriptar.addEventListener("click", e=>{
@@ -111,4 +112,10 @@ btnCopiar.addEventListener("click", e=>{
     let copiar = respuesta;
     copiar.select();
     document.execCommand("copy");
+});
+
+//----- Botón Limpiar -----//
+btnLimpiar.addEventListener("click", e=>{
+    e.preventDefault();
+    location.reload();
 });
