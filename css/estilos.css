@@ -123,7 +123,7 @@ main{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
     position: absolute;
     top: 450px;
 }
@@ -194,10 +194,7 @@ main{
 }
 
 .encriptador-mensaje{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    background: var(--Font);
     position: absolute;
     top: 440px;
 }
@@ -339,11 +336,18 @@ footer{
         position: inherit;
         margin: 15px;
     }
-    .encriptador-mensaje{
+    .encriptador-mensaje {
         display: flex;
-        align-items: center;
-        position: inherit;
+        justify-content: space-between; /* Centra horizontalmente los botones */
+        align-items: center; /* Centra verticalmente los botones */
+        /*position: absolute;  Asegúrate de que los botones estén posicionados dentro de la tarjeta */
+        top: 0px; /* Ajusta la distancia desde la parte inferior de la tarjeta */
+        gap: 40px;
+        width: 100%; /* Asegura que los botones ocupen todo el ancho de la tarjeta */
+        font-size: 16px; /* Tamaño de fuente adecuado para los botones */
+        font-weight: 700;
     }
+
     .tarjeta{
         width: 665px;
         height: 300px;
@@ -361,6 +365,12 @@ footer{
         font-size: 24px;
         font-weight: 700;
     }
+    .encriptador-mensaje{
+        display: flex;
+        align-items: center;
+        position: inherit;
+        margin: 4% 0% 4% 0%;
+    }
     .img-muneco{
         display: none;
     }
@@ -368,6 +378,15 @@ footer{
         position: inherit;
         width: 100%;
     }
+    .btn-limpiar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2%;
+        position: inherit;
+        width: 100%;
+    }
+
     .evaluar{
         width: 100%;
         height: 210px;
@@ -404,6 +423,10 @@ footer{
     .tarjeta{
         margin: auto;
         width: 90%;
+    }
+    .encriptador-mensaje{
+        margin: 10px 20px 20px 0px;
+        gap: 2px;
     }
     .texto-aviso{
         font-size: 14px;
