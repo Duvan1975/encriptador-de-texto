@@ -8,6 +8,7 @@ const btnCopiar = document.querySelector(".btn-copiar");
 const btnDesencriptar = document.querySelector(".btn-desencriptar");
 const btnLimpiar = document.querySelector(".btn-limpiar");
 const pegarTexto = document.querySelector(".texto-pegar");
+const mensajeInicial = "Solo letras minúsculas y sin acentos";
 
 //----- Variable para almacenar el texto copiado -----//
 let textoCopiado = "";
@@ -25,8 +26,9 @@ btnEncriptar.addEventListener("click", e=>{
         aviso.textContent = "El campo de texto NO debe estar vacío";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else if(texto !== txt){
         aviso.style.background = "#c83349";
@@ -35,8 +37,9 @@ btnEncriptar.addEventListener("click", e=>{
         aviso.textContent = "NO debe contener acentos NI caracteres especiales";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else if(texto !== texto.toLowerCase()){
         aviso.style.background = "#C83349";
@@ -45,8 +48,9 @@ btnEncriptar.addEventListener("click", e=>{
         aviso.textContent = "El texto debe ser todo en minúscula";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        }, 1500);
+        }, 2500);
     }
     else if(/\d/.test(texto)){
         aviso.style.background = "#C83349";
@@ -55,8 +59,9 @@ btnEncriptar.addEventListener("click", e=>{
         aviso.textContent = "NO debe contener números";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else{
         texto = texto.replace(/e/mg, "enter");
@@ -66,6 +71,7 @@ btnEncriptar.addEventListener("click", e=>{
         texto = texto.replace(/u/mg, "ufat");
 
         respuesta.innerHTML = texto;
+        btnLimpiar.style.visibility = "inherit";
         btnCopiar.style.visibility = "inherit";
         contenido.remove();
     }
@@ -84,8 +90,10 @@ btnDesencriptar.addEventListener("click", e=>{
         aviso.textContent = "El campo de texto NO debe estar vacío";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+            
+        },2500);
     }
     else if(texto !== txt){
         aviso.style.background = "#C83349";
@@ -94,8 +102,9 @@ btnDesencriptar.addEventListener("click", e=>{
         aviso.textContent = "NO debe contener acentos NI caracteres especiales";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else if(texto !== texto.toLowerCase()){
         aviso.style.background = "#C83349";
@@ -104,8 +113,9 @@ btnDesencriptar.addEventListener("click", e=>{
         aviso.textContent = "El texto debe ser todo en minúscula";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else if(/\d/.test(texto)){
         aviso.style.background = "#C83349";
@@ -114,8 +124,9 @@ btnDesencriptar.addEventListener("click", e=>{
         aviso.textContent = "NO debe contener números";
 
         setTimeout(()=>{
+            aviso.textContent = mensajeInicial;
             aviso.removeAttribute("style");
-        },1500);
+        },2500);
     }
     else{
         texto = texto.replace(/enter/mg, "e");
@@ -125,6 +136,7 @@ btnDesencriptar.addEventListener("click", e=>{
         texto = texto.replace(/ufat/mg, "u");
 
         respuesta.innerHTML = texto;
+        btnLimpiar.style.visibility = "inherit";
         btnCopiar.style.visibility = "inherit";
         contenido.remove();
     }
@@ -136,8 +148,14 @@ btnCopiar.addEventListener("click", e => {
     let copiar = respuesta.innerHTML;
     navigator.clipboard.writeText(copiar).then(() => {
         textoCopiado = copiar;
-        pegarTexto.textContent = "Pegar Texto";
+        pegarTexto.textContent = "- ¡Clic Pegar Texto! -";
         pegarTexto.style.visibility = "inherit";
+        pegarTexto.style.background = "#0080FF";
+        pegarTexto.style.color = "white";
+
+        setTimeout(()=>{
+            pegarTexto.removeAttribute("style");
+        },4000);
     });
 });
 
