@@ -95,7 +95,7 @@ main{
     flex-direction: row;
     align-items: center;
     background-color: transparent;
-    gap: 8px;
+    gap: 4px;
     position: absolute;
     top: 400px;
 }
@@ -114,7 +114,7 @@ main{
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    visibility: hidden;
+    /*visibility: hidden;*/
     line-height: 150%;
     opacity: 0.8;
     color: var(--Dark-Blue);

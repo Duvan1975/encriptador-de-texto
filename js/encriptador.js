@@ -19,7 +19,7 @@ btnEncriptar.addEventListener("click", e=>{
     let txt = texto.normalize("NFD").replace(/[$\.¿\?~!\¡@#%^&*()_|}\{[\]>\<:"`;,\u0300-\u036f']/g, " " );
 
     if (texto == "") {
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#c83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "El campo de texto NO debe estar vacío";
@@ -29,7 +29,7 @@ btnEncriptar.addEventListener("click", e=>{
         },1500);
     }
     else if(texto !== txt){
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#c83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "NO debe contener acentos NI caracteres especiales";
@@ -39,14 +39,24 @@ btnEncriptar.addEventListener("click", e=>{
         },1500);
     }
     else if(texto !== texto.toLowerCase()){
-        aviso.style.background = "#e0876a";
+        aviso.style.background = "#C83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "El texto debe ser todo en minúscula";
 
         setTimeout(()=>{
-            aviso.removeAttribute(style);
+            aviso.removeAttribute("style");
         }, 1500);
+    }
+    else if(/\d/.test(texto)){
+        aviso.style.background = "#C83349";
+        aviso.style.color = "#FFFF";
+        aviso.style.fontWeight = "800";
+        aviso.textContent = "NO debe contener números";
+
+        setTimeout(()=>{
+            aviso.removeAttribute("style");
+        },1500);
     }
     else{
         texto = texto.replace(/e/mg, "enter");
@@ -68,7 +78,7 @@ btnDesencriptar.addEventListener("click", e=>{
     let txt = texto.normalize("NFD").replace(/[$\.¿\?~!\¡@#%^&*()_|}\{[\]>\<:"`;,\u0300-\u036f']/g, " " );
 
     if (texto == "") {
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#C83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "El campo de texto NO debe estar vacío";
@@ -78,7 +88,7 @@ btnDesencriptar.addEventListener("click", e=>{
         },1500);
     }
     else if(texto !== txt){
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#C83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "NO debe contener acentos NI caracteres especiales";
@@ -88,10 +98,20 @@ btnDesencriptar.addEventListener("click", e=>{
         },1500);
     }
     else if(texto !== texto.toLowerCase()){
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#C83349";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "El texto debe ser todo en minúscula";
+
+        setTimeout(()=>{
+            aviso.removeAttribute("style");
+        },1500);
+    }
+    else if(/\d/.test(texto)){
+        aviso.style.background = "#C83349";
+        aviso.style.color = "#FFFF";
+        aviso.style.fontWeight = "800";
+        aviso.textContent = "NO debe contener números";
 
         setTimeout(()=>{
             aviso.removeAttribute("style");
