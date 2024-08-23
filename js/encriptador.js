@@ -7,6 +7,10 @@ const contenido = document.querySelector(".tarjeta-contenedor");
 const btnCopiar = document.querySelector(".btn-copiar");
 const btnDesencriptar = document.querySelector(".btn-desencriptar");
 const btnLimpiar = document.querySelector(".btn-limpiar");
+const pegarTexto = document.querySelector(".texto-pegar");
+
+//----- Variable para almacenar el texto copiado -----//
+let textoCopiado = "";
 
 //----- Botón Encriptar -----//
 btnEncriptar.addEventListener("click", e=>{
@@ -35,14 +39,14 @@ btnEncriptar.addEventListener("click", e=>{
         },1500);
     }
     else if(texto !== texto.toLowerCase()){
-        aviso.style.background = "#0A3871";
+        aviso.style.background = "#e0876a";
         aviso.style.color = "#FFFF";
         aviso.style.fontWeight = "800";
         aviso.textContent = "El texto debe ser todo en minúscula";
 
         setTimeout(()=>{
-            aviso.removeAttribute("style");
-        },1500);
+            aviso.removeAttribute(style);
+        }, 1500);
     }
     else{
         texto = texto.replace(/e/mg, "enter");
@@ -107,11 +111,22 @@ btnDesencriptar.addEventListener("click", e=>{
 });
 
 //----- Botón Copiar -----//
-btnCopiar.addEventListener("click", e=>{
+btnCopiar.addEventListener("click", e => {
     e.preventDefault();
-    let copiar = respuesta;
-    copiar.select();
-    document.execCommand("copy");
+    let copiar = respuesta.innerHTML;
+    navigator.clipboard.writeText(copiar).then(() => {
+        textoCopiado = copiar;
+        pegarTexto.textContent = "Pegar Texto";
+        pegarTexto.style.visibility = "inherit";
+    });
+});
+
+//----- Pegar Texto -----//
+pegarTexto.addEventListener("click", e => {
+    e.preventDefault();
+    if(textoCopiado !== ""){
+        txtEncriptar.value = textoCopiado;
+    }
 });
 
 //----- Botón Limpiar -----//
